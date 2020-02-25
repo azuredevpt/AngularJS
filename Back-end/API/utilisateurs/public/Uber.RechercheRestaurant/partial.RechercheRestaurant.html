@@ -1,0 +1,145 @@
+<div class="page-wrapper">
+    <!-- top Links -->
+    <div class="top-links">
+        <div class="container">
+            <ul class="row links">
+                <li class="col-xs-12 col-sm-3 link-item"><span>1</span><a href="#!/">Choix de du code postal</a>
+                </li>
+                <li class="col-xs-12 col-sm-3 link-item active"><span>2</span><a href="#!/restaurants">Choix
+                        du restaurant</a></li>
+                <li class="col-xs-12 col-sm-3 link-item "><span>3</span><a href="#!/profile">Choix de vos
+                        plats</a>
+                </li>
+                <li class="col-xs-12 col-sm-3 link-item"><span>4</span><a href="checkout.html">Sur place ou à
+                        Emporter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="result-show">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p><span class="primary-color"><strong>{{results.length}}</strong></span> Résultats </p>
+                </div>
+
+                <div class="col-sm-9">
+                    <select class="custom-select pull-right" ng-model="sortColumn" ng-init="sortColumn='-prixmin'">
+                        <option selected value="-prixmin">Tri</option>
+                        <option value="-prixmin">Par prix -</option>
+                        <option value="+prixmin">Par prix +</option>
+                        <option value="-tpslivraison">Par tps de livraison -</option>
+                        <option value="+tpslivraison">Par tps de livraison +</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //results show -->
+    <section class="restaurants-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sidebar clearfix m-b-20">
+                        <div class="main-block">
+
+                            <!-- end:Sidebar nav -->
+                            <!--                          
+                                <div class="sidebar-title white-txt">
+                                    <h6>Type de cuisine</h6> <i class="fa fa-cutlery pull-right"></i>
+                                </div> 
+                            -->
+                            <div class="input-group">
+                                <input type="text" class="form-control search-field" ng-model="search"
+                                    placeholder="Rechercher vos plats"> <span class="input-group-btn">
+                                    <button class="btn btn-secondary search-btn" type="button"><i
+                                            class="fa fa-search"></i></button>
+                                </span> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <!-- ng-repeat="resto in restaurants | filter: {restaurant:search} | orderBy:sortColumn as results"> -->
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <!-- resto in restaurants | filter: {restaurant:search} -->
+                    <div class="bg-gray restaurant-entry"
+                        ng-repeat="resto in restaurants | filter:search | orderBy:sortColumn as results">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                <div class="entry-logo">
+                                    <a class="img-fluid" href="#"><img ng-src="{{resto.image}}" alt="Food logo"></a>
+                                </div>
+                                <!-- end:Logo -->
+                                <div class="entry-dscr">
+                                    <h5><a href="#"><b>{{resto.restaurant}}</b></a></h5> <span>
+                                        {{resto.description}}
+                                        <a href="#">...</a></span>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><i class="fa fa-check"></i> Min
+                                            {{resto.prixmin |  currency : "€" }}
+                                        </li>
+                                        <li class="list-inline-item"><i class="fa fa-motorcycle"></i>
+                                            {{resto.tpslivraison | tpslivraison}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end:Entry description -->
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+                                <div class="right-content bg-white">
+                                    <div class="right-review">
+                                        <div class="rating-block">
+                                            <i class="fa fa-star"
+                                                ng-repeat="i in getNumber(resto.rating) track by $index"></i>
+
+
+                                        </div>
+                                        <p> {{resto.commentaires.length}} avis</p> <a href="#!/profile/{{resto._id}}"
+                                            class="btn theme-btn-dash">Voir
+                                            Menus
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end:right info -->
+                            </div>
+                        </div>
+                        <!--end:row -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app-section">
+        <div class="app-wrap">
+            <div class="container">
+                <div class="row text-img-block text-xs-left">
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
+                            <figure> <img src="images/app.png" alt="Right Image"> </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 left-text">
+                            <h3>The Best Food Delivery App</h3>
+                            <p>Now you can make food happen pretty much wherever you are thanks to the free
+                                easy-to-use Food Delivery &amp; Takeout App.</p>
+                            <div class="social-btns">
+                                <a href="#" class="app-btn apple-button clearfix">
+                                    <div class="pull-left"><i class="fa fa-apple"></i> </div>
+                                    <div class="pull-right"> <span class="text">Available on the</span> <span
+                                            class="text-2">App Store</span> </div>
+                                </a>
+                                <a href="#" class="app-btn android-button clearfix">
+                                    <div class="pull-left"><i class="fa fa-android"></i> </div>
+                                    <div class="pull-right"> <span class="text">Available on the</span> <span
+                                            class="text-2">Play store</span> </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

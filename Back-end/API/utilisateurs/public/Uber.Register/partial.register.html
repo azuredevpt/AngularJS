@@ -1,0 +1,184 @@
+<style>
+    input.ng-invalid {
+        background-color: rgb(253, 232, 236);
+    }
+
+    input.ng-valid {
+        background-color: rgb(232, 248, 232);
+    }
+</style>
+<div class="page-wrapper">
+    <section class="contact-page inner-page">
+        <div class="container">
+            <div class="row">
+                <!-- REGISTER -->
+                <div class="col-md-8">
+                    <div class="widget">
+                        <div class="widget-body">
+                            <form name="userForm" novalidate ng-submit="submitForm(userForm.$valid)">
+                                Je suis : 
+                                <label class="radio-inline"><input type="radio" ng-model='type_inscription'
+                                        value="client" name="optradio">Client</label>
+                                <label class="radio-inline"><input type="radio" ng-model='type_inscription'
+                                        value="restaurant" name="optradio">Restaurant</label>
+                                <label class="radio-inline"><input type="radio" ng-model='type_inscription'
+                                        value="livreur" name="optradio">Livreur</label>
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Nom</label>
+                                        <input class="form-control" name="nom" ng-model="nom" type="text"
+                                            placeholder="Votre nom" id="example-text-input" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Prénom</label>
+                                        <input class="form-control" type="text" ng-model="prenom"
+                                            placeholder="Votre prénom" id="example-text-input-2" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Votre Adresse</label>
+                                        <input type="text" class="form-control" ng-model="adresse"
+                                            id="exampleInputEmails1" aria-describedby="emailHelp"
+                                            placeholder="votre adresse" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Votre code postal</label>
+                                        <input class="form-control" type="text" ng-model="codepostal"
+                                            placeholder="votre code postal" id="example-tel-input-31" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Votre ville</label>
+                                        <input class="form-control" type="text" ng-model="ville"
+                                            placeholder="votre ville" id="example-tel-input-32" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Votre pays</label>
+                                        <input class="form-control" type="text" ng-model="pays" placeholder="votre pays"
+                                            id="example-tel-input-32" required>
+                                    </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Addresse mail</label>
+                                        <input type="email" class="form-control" ng-model="adressemail"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp"
+                                            placeholder="votre email" required> <small id="emailHelp"
+                                            class="form-text text-muted"> Votre mail sera confidentiel</small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputEmail1">Votre numéro</label>
+                                        <input class="form-control" type="tel" ng-model="tel" placeholder="votre tel"
+                                            id="example-tel-input-3" required> <small class="form-text text-muted">Votre
+                                            numéro
+                                            sera confidentiel</small>
+                                    </div>
+
+
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputPassword1">Mot de passe</label>
+                                        <input type="password" class="form-control" ng-model="mdp"
+                                            id="exampleInputPassword1" placeholder="Mot de passe" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleInputPassword1">Resaisie de votre mot de passe </label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2"
+                                            ng-model="mdp2" placeholder="Mot de passe" required>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="exampleTextarea">Commentaire</label>
+                                        <textarea class="form-control" ng-model="commentaire" id="exampleTextarea"
+                                            rows="2"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p> <a type="submit" ng-click="postdata()" class="btn theme-btn"
+                                                style="color: white">Register</a> </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end: Widget -->
+                    </div>
+                    <!-- /REGISTER -->
+                </div>
+                <!-- WHY? -->
+                <div class="col-md-4">
+                    <h4>Registration is fast, easy, and free.</h4>
+                    <p>Once you"re registered, you can:</p>
+                    <hr>
+                    <img src="images/Local.png" alt="" class="img-fluid">
+                    <p></p>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse"
+                                    class="panel-toggle collapsed" href="#faq1" aria-expanded="false"><i
+                                        class="ti-info-alt" aria-hidden="true"></i>Can I viverra sit amet quam eget
+                                    lacinia?</a></h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="faq1" aria-expanded="false" role="article"
+                            style="height: 0px;">
+                            <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                                rutrum ut erat a ultricies. Phasellus non auctor nisi, id aliquet lectus. Vestibulum
+                                libero eros, aliquet at tempus ut, scelerisque sit amet nunc. Vivamus id porta neque, in
+                                pulvinar ipsum. Vestibulum sit amet quam sem. Pellentesque accumsan consequat venenatis.
+                                Pellentesque sit amet justo dictum, interdum odio non, dictum nisi. Fusce sit amet
+                                turpis eget nibh elementum sagittis. Nunc consequat lacinia purus, in consequat neque
+                                consequat id. </div>
+                        </div>
+                    </div>
+                    <!-- end:panel -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse"
+                                    class="panel-toggle" href="#faq2" aria-expanded="true"><i class="ti-info-alt"
+                                        aria-hidden="true"></i>Can I viverra sit amet quam eget lacinia?</a></h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="faq2" aria-expanded="true" role="article">
+                            <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                                rutrum ut erat a ultricies. Phasellus non auctor nisi, id aliquet lectus. Vestibulum
+                                libero eros, aliquet at tempus ut, scelerisque sit amet nunc. Vivamus id porta neque, in
+                                pulvinar ipsum. Vestibulum sit amet quam sem. Pellentesque accumsan consequat venenatis.
+                                Pellentesque sit amet justo dictum, interdum odio non, dictum nisi. Fusce sit amet
+                                turpis eget nibh elementum sagittis. Nunc consequat lacinia purus, in consequat neque
+                                consequat id. </div>
+                        </div>
+                    </div>
+                    <!-- end:Panel -->
+                    <h4 class="m-t-20">Contact Customer Support</h4>
+                    <p> If you"re looking for more help or have a question to ask, please </p>
+                    <p> <a href="contact.html" class="btn theme-btn m-t-15">contact us</a> </p>
+                </div>
+                <!-- /WHY? -->
+            </div>
+        </div>
+    </section>
+    <section class="app-section">
+        <div class="app-wrap">
+            <div class="container">
+                <div class="row text-img-block text-xs-left">
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-6  right-image text-center">
+                            <figure> <img src="images/app.png" alt="Right Image"> </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 left-text">
+                            <h3>The Best Food Delivery App</h3>
+                            <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use
+                                Food Delivery &amp; Takeout App.</p>
+                            <div class="social-btns">
+                                <a href="#" class="app-btn apple-button clearfix">
+                                    <div class="pull-left"><i class="fa fa-apple"></i> </div>
+                                    <div class="pull-right"> <span class="text">Available on the</span> <span
+                                            class="text-2">App Store</span> </div>
+                                </a>
+                                <a href="#" class="app-btn android-button clearfix">
+                                    <div class="pull-left"><i class="fa fa-android"></i> </div>
+                                    <div class="pull-right"> <span class="text">Available on the</span> <span
+                                            class="text-2">Play store</span> </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

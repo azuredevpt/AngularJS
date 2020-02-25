@@ -1,0 +1,9 @@
+{
+    "server_uri" :"mongodb+srv://useradmin:useradmin@cluster0-espkl.mongodb.net/test?retryWrites=true&w=majority",
+    "db" : "Uber4Rd",
+    "user_collection" : "Utilisateurs",
+    "commande_collection" : "Commandes",
+    "restaurant_collection" : "Restaurants",
+    "user_port":3000,
+    "auth_port":3002
+}

@@ -1,0 +1,59 @@
+<style>
+    #parent_div_1,
+    #parent_div_2,
+    #parent_div_3 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        margin-right: 10px;
+        float: left;
+    }
+
+    .child_div_1 {
+        float: left;
+        margin-right: 5px;
+    }
+</style>
+
+<div class="page-wrapper">
+
+
+    <div class="dropdown show">
+        <a class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="color:white">
+            Liste des commandes
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a ng-click="show_cmd($index)" ng-repeat="cmd in commandes" class="dropdown-item">{{cmd._id}} -
+                {{cmd.produits[0].libelle}} </a>
+
+        </div>
+    </div>
+
+    <div class="card" ng-show="isCmdShowing">
+        <div class="card-header">
+            Commande numéro{{currentCmd._id}}
+            <br>
+            Nombre de produits commandés {{currentCmd.produits.length}}
+        </div>
+        <div class="card-body">
+            <h5 ng-repeat="produit in currentCmd.produits" class="card-title">{{produit.libelle}} - prix
+                {{produit.prix | currency : "€"}}</h5>
+
+
+        </div>
+    </div>
+    <div class="top-links">
+    
+            <div class="container">
+                <ul class="row links">
+
+                    <li ng-if="$index != statuscmd.length -1" ng-repeat = "unstatus in statuscmd" class="col-xs-12 col-sm-3 link-item" ><span>{{$index+1}}</span><a href="#!/">{{unstatus.status}}</a>
+                    </li>
+                    <li ng-if="$index == statuscmd.length -1" ng-repeat = "unstatus in statuscmd" class="col-xs-12 col-sm-3 link-item active" ><span>{{$index+1}}</span><a href="#!/">{{unstatus.status}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>

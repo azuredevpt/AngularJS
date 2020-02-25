@@ -1,0 +1,105 @@
+<div class="page-wrapper">
+   <!-- top Links -->
+   <div class="top-links">
+      <div class="container">
+         <ul class="row links">
+            <li class="col-xs-12 col-sm-3 link-item"><span>1</span><a href="#!/">Choix de du code postal</a>
+            </li>
+            <li class="col-xs-12 col-sm-3 link-item"><span>2</span><a href="#!/restaurants">Choix
+                  du restaurant</a></li>
+            <li class="col-xs-12 col-sm-3 link-item active"><span>3</span><a href="#!/profile">Choix de vos
+                  plats</a>
+            </li>
+            <li class="col-xs-12 col-sm-3 link-item"><span>4</span><a href="checkout.html">Sur place ou à
+                  Emporter</a></li>
+         </ul>
+      </div>
+   </div>
+
+   <div class="result-show">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-3">
+               <p><span class="primary-color"><strong>{{results.length}}</strong></span> Résultats </p>
+            </div>
+
+
+         </div>
+      </div>
+   </div>
+   <!-- //results show -->
+   <section class="restaurants-page">
+      <div class="container">
+         <div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+               <div class="bg-gray restaurant-entry" ng-repeat="spe in produits">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                        <div class="entry-logo">
+                           <a class="img-fluid" href="#"><img ng-src="images/food6.jpg" alt="Food logo"></a>
+                        </div>
+                        <!-- end:Logo -->
+                        <div class="entry-dscr">
+                           <h3><a href="#"><b>{{spe.libelle}}</b></a></h3> <span>
+
+                              
+                           <ul class="list-inline">
+                              <li class="list-inline-item"><i ></i>
+                                 <h3> Prix
+                                    {{spe.prix |  currency : "€" }}
+                              </li>
+                              </h3>
+                           </ul>
+                        </div>
+                        <!-- end:Entry description -->
+                     </div>
+                     <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+                        <div class="right-content bg-white">
+                           <div class="right-review">
+
+                              <a href="#!/profile/{{resto._id}}" class="btn theme-btn-dash">Ajouter au panier
+                              </a>
+                           </div>
+                        </div>
+                        <!-- end:right info -->
+                     </div>
+                  </div>
+                  <!--end:row -->
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="app-section">
+      <div class="app-wrap">
+         <div class="container">
+            <div class="row text-img-block text-xs-left">
+               <div class="container">
+                  <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
+                     <figure> <img src="images/app.png" alt="Right Image"> </figure>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 left-text">
+                     <h3>The Best Food Delivery App</h3>
+                     <p>Now you can make food happen pretty much wherever you are thanks to the free
+                        easy-to-use Food Delivery &amp; Takeout App.</p>
+                     <div class="social-btns">
+                        <a href="#" class="app-btn apple-button clearfix">
+                           <div class="pull-left"><i class="fa fa-apple"></i> </div>
+                           <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App
+                                 Store</span> </div>
+                        </a>
+                        <a href="#" class="app-btn android-button clearfix">
+                           <div class="pull-left"><i class="fa fa-android"></i> </div>
+                           <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play
+                                 store</span> </div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
